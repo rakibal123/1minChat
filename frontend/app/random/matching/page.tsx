@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function MatchmakingPage() {
+function MatchmakingInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [dots, setDots] = useState("");
@@ -69,5 +69,17 @@ export default function MatchmakingPage() {
         </button>
       </div>
     </main>
+  );
+}
+
+export default function MatchmakingPage() {
+  return (
+    <Suspense fallback={
+      <main className="flex min-h-screen flex-col items-center justify-center p-6 bg-black text-white">
+        <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+      </main>
+    }>
+      <MatchmakingInner />
+    </Suspense>
   );
 }
