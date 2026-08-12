@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1MIN - One minute. One conversation.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#151a2f",
+                        "on-primary-fixed-variant": "#00497e",
+                        "on-secondary-fixed": "#001c3a",
+                        "surface-variant": "#2f3449",
+                        "on-tertiary-fixed": "#001c38",
+                        "outline": "#8a919d",
+                        "primary-fixed-dim": "#a0caff",
+                        "surface-container-high": "#24293e",
+                        "on-tertiary-container": "#f4f7ff",
+                        "outline-variant": "#404751",
+                        "on-primary-container": "#f4f7ff",
+                        "inverse-on-surface": "#2a2f45",
+                        "on-tertiary": "#133252",
+                        "inverse-primary": "#0061a5",
+                        "tertiary-fixed": "#d3e4ff",
+                        "on-surface-variant": "#c0c7d3",
+                        "on-secondary-container": "#8ab7f8",
+                        "primary-fixed": "#d2e4ff",
+                        "on-background": "#dde1fd",
+                        "primary-container": "#0474c4",
+                        "secondary-fixed-dim": "#a5c8ff",
+                        "surface-container-lowest": "#080d21",
+                        "surface-container": "#191f33",
+                        "on-secondary": "#00315e",
+                        "on-tertiary-fixed-variant": "#2c486a",
+                        "background": "#000000", /* Overridden per pure black requirement */
+                        "primary": "#a0caff",
+                        "surface-dim": "#0d1226",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#acc8f1",
+                        "secondary": "#a5c8ff",
+                        "on-error": "#690005",
+                        "on-primary": "#003259",
+                        "tertiary-container": "#577397",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#0c4782",
+                        "surface-container-highest": "#2f3449",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#d4e3ff",
+                        "surface-bright": "#33384e",
+                        "inverse-surface": "#dde1fd",
+                        "surface": "#000000",
+                        "tertiary": "#acc8f1",
+                        "on-surface": "#dde1fd",
+                        "on-secondary-fixed-variant": "#0c4782",
+                        "on-primary-fixed": "#001c37",
+                        "surface-tint": "#a0caff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem", /* 24px requirement */
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "stack-xl": "64px",
+                        "container-max": "1200px"
+                    },
+                    fontFamily: {
+                        "hero-lg-mobile": ["Manrope", "sans-serif"],
+                        "label-caps": ["Manrope", "sans-serif"],
+                        "display-md-mobile": ["Manrope", "sans-serif"],
+                        "hero-lg": ["Manrope", "sans-serif"],
+                        "display-md": ["Manrope", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "headline-sm": ["Manrope", "sans-serif"],
+                        "body-lg": ["Manrope", "sans-serif"]
+                    },
+                    fontSize: {
+                        "hero-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-md-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "hero-lg": ["80px", { "lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "display-md": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #dde1fd;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom styles for 1MIN premium feel */
+        .card-level-1 {
+            background-color: #262B40;
+            border: 1px solid rgba(83, 121, 174, 0.2);
+            transition: border-color 0.3s ease;
+        }
+        .card-level-1:hover {
+            border-color: rgba(83, 121, 174, 0.5);
+        }
+        .text-accent-teal {
+            color: #8FD9FB;
+        }
+        .btn-primary {
+            background-color: #0474C4;
+            color: #FFFFFF;
+            border-radius: 14px;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #5379AE;
+            color: #A8C4EC;
+            border-radius: 14px;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(83, 121, 174, 0.1);
+        }
+        .glow-shadow {
+            box-shadow: 0 0 40px rgba(4, 116, 196, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background text-primary font-body-md text-body-md docked full-width top-0 border-b border-outline-variant flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-stack-sm max-w-container-max mx-auto left-0 right-0">
+<div class="font-hero-lg-mobile text-hero-lg-mobile font-black text-on-surface tracking-tighter" style="font-size: 24px; line-height: 24px;">1MIN</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-200 opacity-80 scale-95 transition-all" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">How It Works</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Safety</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="text-on-surface-variant text-sm hidden md:inline-block">1,284 online</span>
+<button class="btn-primary px-6 py-2 font-headline-sm text-sm">Get Started</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px] px-gutter md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Hero Section -->
+<section class="py-stack-xl flex flex-col items-center text-center mt-12 md:mt-24">
+<h1 class="font-hero-lg-mobile md:font-hero-lg text-hero-lg-mobile md:text-hero-lg max-w-4xl mx-auto mb-stack-md leading-tight">
+                One minute. <br class="md:hidden"/><span class="text-accent-teal">One conversation.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-xl">
+                Talk to someone new for 60 seconds — or create a private link and chat without limits.
+            </p>
+</section>
+<!-- Primary Action Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg mb-stack-xl">
+<!-- Meet Someone Card -->
+<div class="card-level-1 rounded-2xl p-stack-lg flex flex-col items-start justify-between min-h-[300px] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-[#0474C4] opacity-10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:opacity-20 transition-opacity"></div>
+<div class="z-10 w-full flex justify-between items-start mb-stack-lg">
+<div class="w-12 h-12 rounded-full bg-[#0474C4]/20 flex items-center justify-center text-[#0474C4]">
+<span class="material-symbols-outlined">shuffle</span>
+</div>
+<span class="font-label-caps text-label-caps px-3 py-1 bg-[#06457F] text-[#8FD9FB] rounded-full">Random</span>
+</div>
+<div class="z-10 mt-auto w-full">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Random 1-Minute Chat</p>
+<h2 class="font-display-md-mobile text-display-md-mobile mb-stack-md">Meet Someone</h2>
+<button class="btn-primary w-full py-4 font-headline-sm text-base flex justify-center items-center gap-2">
+                        Start Random Chat <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Invite Someone Card -->
+<div class="card-level-1 rounded-2xl p-stack-lg flex flex-col items-start justify-between min-h-[300px] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-[#525AFF] opacity-10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:opacity-20 transition-opacity"></div>
+<div class="z-10 w-full flex justify-between items-start mb-stack-lg">
+<div class="w-12 h-12 rounded-full bg-[#525AFF]/20 flex items-center justify-center text-[#525AFF]">
+<span class="material-symbols-outlined">link</span>
+</div>
+<span class="font-label-caps text-label-caps px-3 py-1 bg-surface-bright text-on-surface-variant rounded-full border border-outline-variant">Private</span>
+</div>
+<div class="z-10 mt-auto w-full">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Private Chat · No Limit</p>
+<h2 class="font-display-md-mobile text-display-md-mobile mb-stack-md">Invite Someone</h2>
+<button class="btn-secondary w-full py-4 font-headline-sm text-base flex justify-center items-center gap-2">
+                        Create Invite Link <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Stats -->
+<section class="border-y border-outline-variant py-stack-md mb-stack-xl flex flex-wrap justify-between items-center text-center gap-stack-md">
+<div class="flex-1 min-w-[120px]">
+<p class="font-headline-sm text-headline-sm text-on-surface">1,284+</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Online Now</p>
+</div>
+<div class="flex-1 min-w-[120px]">
+<p class="font-headline-sm text-headline-sm text-on-surface">32K+</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Chats Today</p>
+</div>
+<div class="flex-1 min-w-[120px]">
+<p class="font-headline-sm text-headline-sm text-on-surface">128+</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Countries</p>
+</div>
+<div class="flex-1 min-w-[120px]">
+<p class="font-headline-sm text-headline-sm text-on-surface text-accent-teal">100%</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Anonymous</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background text-primary font-body-md text-body-md full-width bottom border-t border-outline-variant flat no shadows focus:ring-2 focus:ring-primary w-full px-gutter py-stack-xl flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto mt-auto">
+<div class="font-headline-sm text-headline-sm font-extrabold text-on-surface mb-stack-md md:mb-0">
+            © 2024 1MIN. One minute. One conversation.
+        </div>
+<div class="flex flex-wrap justify-center gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Product</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Safety</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</footer>
+</body></html>

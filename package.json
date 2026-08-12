@@ -1,0 +1,19 @@
+{
+  "name": "1min",
+  "version": "1.0.0",
+  "description": "One minute. One conversation.",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build && cd ../backend && npm run build",
+    "lint": "cd frontend && npm run lint",
+    "typecheck": "cd frontend && npm run typecheck && cd ../backend && npx tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
