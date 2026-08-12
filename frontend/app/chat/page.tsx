@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { io, Socket } from "socket.io-client";
@@ -14,7 +14,7 @@ interface Message {
   replyToId?: string;
 }
 
-export default function ChatPage() {
+function ChatInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isPrivate = !!searchParams.get("invite");
@@ -321,5 +321,17 @@ export default function ChatPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function ChatPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen bg-[#050505] text-white justify-center items-center">
+        <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+      </div>
+    }>
+      <ChatInner />
+    </Suspense>
   );
 }

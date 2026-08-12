@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams, useParams } from "next/navigation";
 import Link from "next/link";
 
-export default function InviteWaitingRoom() {
+function InviteInner() {
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
@@ -133,5 +133,17 @@ export default function InviteWaitingRoom() {
 
       </div>
     </main>
+  );
+}
+
+export default function InviteWaitingRoom() {
+  return (
+    <Suspense fallback={
+      <main className="flex min-h-screen flex-col items-center justify-center p-6 bg-black text-white">
+        <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+      </main>
+    }>
+      <InviteInner />
+    </Suspense>
   );
 }
