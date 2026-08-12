@@ -30,7 +30,8 @@ function ChatInner() {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const API_URL = rawApiUrl.replace(/\/+$/, "");
     const newSocket = io(API_URL);
     setSocket(newSocket);
     
