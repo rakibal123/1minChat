@@ -1,6 +1,6 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-export interface IInvite extends Document {
+export interface IInvite {
   code: string;
   isUsed: boolean;
   createdAt: Date;
@@ -12,4 +12,4 @@ const InviteSchema: Schema = new Schema({
   createdAt: { type: Date, default: Date.now, expires: 86400 } // Auto-delete after 24 hours
 });
 
-export default mongoose.models.Invite || mongoose.model<IInvite>('Invite', InviteSchema);
+export default mongoose.models.Invite || mongoose.model('Invite', InviteSchema);

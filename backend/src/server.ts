@@ -46,7 +46,7 @@ app.post('/api/invites', async (req, res) => {
 
 app.get('/api/invites/:code', async (req, res) => {
   try {
-    const invite = await Invite.findOne({ code: req.params.code });
+    const invite = await Invite.findOne({ code: req.params.code } as any);
     if (!invite) {
       return res.status(404).json({ error: 'Invite not found' });
     }
@@ -73,8 +73,8 @@ io.on('connection', (socket) => {
   socket.on('join_chat', ({ isPrivate, inviteCode }) => {
     if (isPrivate && inviteCode) {
       currentRoom = inviteCode;
-      socket.join(currentRoom);
-      socket.to(currentRoom).emit('stranger_joined');
+      socket.join(currentRoom as string);
+      socket.to(currentRoom as string).emit('stranger_joined');
     } else {
       if (waitingUser && waitingUser !== socket.id) {
         // Match found!
@@ -126,7 +126,7 @@ async function startServer() {
     await mongoose.connect(MONGODB_URI);
     console.log('Connected to MongoDB');
   } catch (error) {
-    console.warn('Warning: Failed to connect to MongoDB. Starting server without DB:', error.message);
+    console.warn('Warning: Failed to connect to MongoDB. Starting server without DB:', (error as Error).message);
   }
   
   server.listen(PORT, () => {
