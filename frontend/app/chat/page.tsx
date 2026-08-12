@@ -30,7 +30,7 @@ function ChatInner() {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'production' ? "https://oneminchat.onrender.com" : "http://localhost:5000");
     const API_URL = rawApiUrl.replace(/\/+$/, "");
     const newSocket = io(API_URL);
     setSocket(newSocket);

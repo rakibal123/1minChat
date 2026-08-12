@@ -18,7 +18,7 @@ export default function CreateInvitePage() {
 
     async function createInvite() {
       try {
-        const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'production' ? "https://oneminchat.onrender.com" : "http://localhost:5000");
         const API_URL = rawApiUrl.replace(/\/+$/, "");
         const res = await fetch(`${API_URL}/api/invites`, { 
           method: "POST",
