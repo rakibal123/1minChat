@@ -26,7 +26,8 @@ export default function InviteWaitingRoom() {
           return;
         }
 
-        const res = await fetch(`http://localhost:5000/api/invites/${inviteId}`);
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const res = await fetch(`${API_URL}/api/invites/${inviteId}`);
         if (!res.ok) {
           const data = await res.json();
           setStatus("invalid");

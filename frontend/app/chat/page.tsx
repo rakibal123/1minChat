@@ -29,7 +29,8 @@ export default function ChatPage() {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const newSocket = io(API_URL);
     setSocket(newSocket);
     
     newSocket.on("connect", () => {
